@@ -1,0 +1,10 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import "tailwindcss";
+@theme {
+  --font-roboto: "Roboto", sans-serif; 
+}
+/* You can add this to index.css or Tailwind style */
+.input {
+  @apply block w-full mb-3 px-4 py-2 border border-gray-300 rounded;
+}
