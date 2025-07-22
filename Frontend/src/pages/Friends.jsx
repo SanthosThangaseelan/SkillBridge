@@ -1,31 +1,45 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import ComingSoon from "../components/ComingSoon";
 
 const Friends = () => {
-  const friends = [
-    { name: "Ashwin", city: "Chennai" },
-    { name: "Meena", city: "Madurai" },
-  ];
+  // const [friends, setFriends] = useState([]);
+  // const [selectedFriend, setSelectedFriend] = useState(null);
+
+  // useEffect(() => {
+  //   axios.get("http://localhost:5000/api/friends", { withCredentials: true })
+  //     .then(res => setFriends(res.data));
+  // }, []);
 
   return (
-    <motion.div
-      initial={{ y: 30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      className="max-w-2xl mx-auto"
-    >
-      <h2 className="text-2xl font-bold text-blue-700 mb-6">Your Friends</h2>
-      <ul className="space-y-4">
-        {friends.map((friend, index) => (
-          <li key={index} className="bg-white p-4 rounded shadow flex justify-between items-center">
-            <div>
-              <h3 className="font-semibold">{friend.name}</h3>
-              <p className="text-gray-500 text-sm">{friend.city}</p>
-            </div>
-            <button className="text-sm text-blue-600 hover:underline">Chat</button>
-          </li>
-        ))}
-      </ul>
-    </motion.div>
+    // <div className="p-6 max-w-4xl mx-auto">
+    //   <h2 className="text-2xl font-bold text-blue-700 mb-4">🧑‍🤝‍🧑 Your Friends</h2>
+
+    //   <div className="grid md:grid-cols-2 gap-4">
+    //     <div>
+    //       {friends.map(friend => (
+    //         <div key={friend._id} className="bg-white p-4 shadow rounded mb-3 flex justify-between items-center">
+    //           <div>
+    //             <h4 className="font-semibold">{friend.name}</h4>
+    //             <p className="text-sm text-gray-500">{friend.email} • {friend.language}</p>
+    //           </div>
+    //           <Link
+    //             to={`/dashboard/chat`}
+    //             className="bg-blue-500 text-white px-3 py-1 rounded"
+    //           >
+    //             Chat
+    //           </Link>
+    //         </div>
+    //       ))}
+    //     </div>
+
+    //     <div>
+    //       {selectedFriend && <Chat friend={selectedFriend} />}
+    //     </div>
+    //   </div>
+    // </div>
+    <ComingSoon/>
   );
 };
 

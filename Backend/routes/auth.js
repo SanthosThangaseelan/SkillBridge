@@ -52,11 +52,15 @@ router.post('/login', async (req, res) => {
 });
 
 // Get current user (session)
-router.get('/me', async (req, res) => {
+router.get("/me", async (req, res) => {
+  //console.log("Session on /me:", req.session); // Log it
+
   if (!req.session.userId) return res.json(null);
+
   const user = await User.findById(req.session.userId);
   res.json(user);
 });
+
 
 // Logout
 router.post('/logout', (req, res) => {

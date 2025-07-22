@@ -8,3 +8,6 @@
 .input {
   @apply block w-full mb-3 px-4 py-2 border border-gray-300 rounded;
 }
+.input-field {
+  @apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition;
+}
